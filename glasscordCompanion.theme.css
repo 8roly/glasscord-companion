@@ -1,0 +1,158 @@
+/**
+ * @name Glasscord Companion
+ * @author 8roly
+ * @version 1.0.0
+ * @description A companion theme for AryToNeX's Glasscord, which is required for this to work properly.
+ * @source https://github.com/8roly/glasscord-companion
+ * @website https://www.deviantart.com/8roly
+*/
+
+.ace_editor {
+    font-family: "Iosevka Curly";
+    font-weight: 300;
+}
+
+/* fuck it */
+
+::placeholder, body, button, input, select, textarea, ::-webkit-input-placeholder, body, button, input, select, textarea {
+    font-family: "Selawik", "Segoe UI";
+}
+
+/* change colors */
+
+.theme-light {
+    --background-primary: #fff;
+    --background-secondary: rgba(255,255,255,.6);
+    
+    --background-modifier-selected: rgba(255,255,255,.6);
+    
+    --header-primary: rgb(27,29,35);
+    --header-secondary: rgba(27,29,35,.6);
+    --text-normal: rgb(2,4,6);
+    --text-muted: rgba(2,4,6,.4);
+    --text-link: #c776c8;
+    --channels-default: rgb(2,4,6);
+    --interactive-normal: rgba(2,4,6,.6);
+    --interactive-hover: rgb(2,4,6);
+    --interactive-active: rgb(27,29,35);
+    
+    --logo-primary: red;
+    --focus-primary: red;
+    
+    --borders: #c4c8d2;
+    }
+    
+/* hide titlebar */
+
+.titleBar-AC4pGV {
+    display: none;
+}
+
+/* transparent bg */
+
+.wrapper-1Rf91z, .container-PNkimc, .app-2rEoOp, .sidebar-2K8pFh, .container-1r6BKw.themed-ANHk51, .nowPlayingColumn-2sl4cE {
+    background: transparent;
+}
+
+/* reintroduce background colors */
+
+.chat-3bRxxu {
+    background: var(--background-secondary);
+    box-shadow: 0px 0px 6px rgba(0,0,0,.1);
+}
+
+.base-3dtUhz {
+    background: var(--background-secondary);
+    box-shadow: 0px 0px 6px rgba(0,0,0,.1);
+}
+
+/* style inputs */
+
+.scrollableContainer-2NUZem, .searchBar-3dMhjb {
+    background: transparent;
+    border-radius: 3px;
+    box-shadow: 0px 0px 3px rgba(0,0,0,.2);
+    transition: all .3s;
+}
+
+.messages-3amgkR {
+    background: transparent !important;
+}
+
+.scrollableContainer-2NUZem:hover, .scrollableContainer-2NUZem:active {
+    border-color: var(--text-link);
+    transition: all .2s;
+}
+
+/* icons in sidebar */
+
+.circleIconButton-jET_ig, .childWrapper-anI2G9 {
+    background: none;
+}
+
+#bd-pub-li, .guildSeparator-3s64Iy {
+    display: none;
+}
+
+.circleIconButton-jET_ig {
+    color: var(--text-normal);
+}
+
+/* currently selected server */
+
+.item-2hkk8m {
+    border-radius: 0px;
+    width: 4px;
+    margin-left: -2px;
+}
+
+/* currently selected channel */
+
+.content-3at_AU {
+    border-radius: 0px;
+    margin: 0;
+}
+
+.da-selected {
+    box-shadow: 0px 0px 3px rgba(0,0,0,.1);
+}
+
+.scrollerWrap-2lJEkd {
+    margin-right: -8px;
+}
+
+/* adjust headers in channel sidebar */
+
+.name-IbjUBS {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* and the rest */
+
+.name-3_Dsmg {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.name-3YKhmS, .tierTooltipTitle-1EIbL_ {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: capitalize;
+}
+
+.header-2o-2hj {
+    padding: 0px 8px;
+}
+
+/* fixing more font weights */
+
+.compact-T3H92H .header-23xsNx .username-1A8OIy, .cozy-3raOZG .header-23xsNx .username-1A8OIy {
+    font-weight: 600;
+}
+
+.timestamp-3ZCmNB {
+    font-weight: 400;
+}
