@@ -1,7 +1,7 @@
 /**
  * @name Glasscord Companion
  * @author 8roly
- * @version 1.0.0
+ * @version 0.1
  * @description A companion theme for AryToNeX's Glasscord, which is required for this to work properly.
  * @source https://github.com/8roly/glasscord-companion
  * @website https://www.deviantart.com/8roly
@@ -51,25 +51,25 @@
 /* transparent bg */
 
 .wrapper-1Rf91z, .container-PNkimc, .app-2rEoOp, .sidebar-2K8pFh, .container-1r6BKw.themed-ANHk51, .nowPlayingColumn-2sl4cE {
-    background: transparent;
+    background: transparent !important;
 }
 
 /* reintroduce background colors */
 
 .chat-3bRxxu {
-    background: var(--background-secondary);
+    background: var(--background-secondary) !important;
     box-shadow: 0px 0px 6px rgba(0,0,0,.1);
 }
 
 .base-3dtUhz {
-    background: var(--background-secondary);
+    background: var(--background-secondary) !important;
     box-shadow: 0px 0px 6px rgba(0,0,0,.1);
 }
 
 /* style inputs */
 
 .scrollableContainer-2NUZem, .searchBar-3dMhjb {
-    background: transparent;
+    background: transparent !important;
     border-radius: 3px;
     box-shadow: 0px 0px 3px rgba(0,0,0,.2);
     transition: all .3s;
@@ -87,7 +87,7 @@
 /* icons in sidebar */
 
 .circleIconButton-jET_ig, .childWrapper-anI2G9 {
-    background: none;
+    background: none !important;
 }
 
 #bd-pub-li, .guildSeparator-3s64Iy {
