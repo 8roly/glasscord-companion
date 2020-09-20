@@ -1,7 +1,7 @@
 /**
  * @name Glasscord Companion
  * @author 8roly
- * @version 0.1
+ * @version 1.0
  * @description A companion theme for AryToNeX's Glasscord, which is required for this to work properly.
  * @source https://github.com/8roly/glasscord-companion
  * @website https://www.deviantart.com/8roly
@@ -9,7 +9,7 @@
 
 .ace_editor {
     font-family: "Iosevka SS12", "Iosevka Curly", monospace;
-    font-weight: 300;
+    font-weight: 350;
 }
 
 /* fuck it */
@@ -32,18 +32,22 @@
 /* change colors */
 
 .theme-light {
-    --background-primary: #fff;
-    --background-secondary: rgba(255,255,255,.6);
+    --background-primary: white;
+    --background-secondary: rgb(242,242,242, .6);
+    --background-tertiary: rgba(247,247,247, .6);
     
-    --background-modifier-selected: rgba(255,255,255,.6);
+    --background-modifier-selected: rgba(255,255,255,.8);
     
-    --header-primary: rgb(27,29,35);
+    --header-primary: rgb(27, 29, 35);
     --header-secondary: rgba(27,29,35,.8);
+
+    --header-background: rgba(255,255,255,.6)
+
     --text-normal: rgb(2,4,6);
     --text-muted: rgba(2,4,6,.6);
-    --text-link: #3e82e5;
+    --text-link: #3778F6;
     --channels-default: rgb(2,4,6);
-    --interactive-normal: rgba(2,4,6,.6);
+    --interactive-normal: rgba(2,4,6,.8);
     --interactive-hover: rgb(2,4,6);
     --interactive-active: rgb(27,29,35);
     
@@ -51,28 +55,40 @@
     --focus-primary: red;
     
     --borders: #c4c8d2;
+
+    
+    --scrollbar-auto-track: #0000;
+    --scrollbar-auto-thumb: #767676;
+    
     }
     
 .theme-dark {
-    --background-primary: #1d1d1d;
-    --background-secondary: rgba(29,29,29,.6);
+    --background-primary: #141414;
+    --background-secondary: #14141499;
+    --background-tertiary: #1f1f1f99;
     
-    --background-modifier-selected: #1d1d1d;
+    --background-modifier-selected: #000;
     
     --header-primary: rgb(230,230,230);
     --header-secondary: rgba(230,230,230,.6);
-    --text-normal: rgb(242,244,246);
-    --text-muted: rgba(242,244,246,.6);
-    --text-link: #3e82e5;
-    --channels-default: rgb(242,244,246);
-    --interactive-normal: rgba(242,244,246,.6);
-    --interactive-hover: rgb(242,244,246);
+
+    --header-background: rgba(0,0,0,.6)
+
+    --text-normal: #f7f7f7cd;
+    --text-muted: rgba(247,247,247,.6);
+    --text-link: #3778F6;
+    --channels-default: #f7f7f7cd;
+    --interactive-normal: rgba(247,247,247,.8);
+    --interactive-hover: rgb(247,247,247);
     --interactive-active: rgb(230,230,230);
     
     --logo-primary: red;
     --focus-primary: red;
     
     --borders: #c4c8d2;
+
+    --scrollbar-auto-track: #0000;
+    --scrollbar-auto-thumb: #767676;
     }
     
 /* hide titlebar */
@@ -81,17 +97,17 @@
     display: none;
 }
 
-/* add a border */
-
-
-
 /* transparent bg */
 
-.wrapper-1Rf91z, .container-PNkimc, .app-2rEoOp, .sidebar-2K8pFh, .container-1r6BKw.themed-ANHk51, .nowPlayingColumn-2sl4cE {
+.wrapper-1Rf91z, .container-PNkimc, .app-2rEoOp, .sidebar-2K8pFh, .container-1r6BKw.themed-ANHk51, .nowPlayingColumn-2sl4cE, .appMount-3lHmkl, body, .members-1998pB {
     background: transparent !important;
 }
 
 /* reintroduce background colors */
+
+.bg-h5JY_x {
+    background: var(--background-tertiary) !important;
+}
 
 .chat-3bRxxu, .container-1D34oG {
     background: var(--background-primary) !important;
@@ -137,7 +153,7 @@
     border-radius: 2px;
     width: 2.5px;
     margin-left: 2px;
-    background-color: var(--interactive-normal)
+    background-color: var(--text-link)
 }
 
 /* currently selected channel */
@@ -155,6 +171,10 @@
     z-index: 999;
 }
 
+.da-selected .da-name {
+    font-weight: 500;
+}
+
 .scrollerWrap-2lJEkd {
     margin-right: -8px;
 }
@@ -162,20 +182,72 @@
 /* adjust headers in channel sidebar */
 
 .name-IbjUBS {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 500;
     text-transform: capitalize;
+    height: 24px;
+    box-sizing: border-box;
+    padding: 3px 0px;    
+}
+
+h1 {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+/* a header should not be that tiny.  what the hale. */
+
+.privateChannelsHeaderContainer-3NB1K1 {
+    padding: 3px 8px;
+    box-sizing: border-box;
+    height: 42px;
+    font-size: 16px;
+    line-height: 32px;
+    text-transform: unset !important;
+    color: var(--text-normal);
+}
+
+.privateChannelsHeaderContainer-3NB1K1:hover {
+    background: var(--background-secondary);
+    cursor: pointer;
+}
+
+#private-channels > div > h2 > div {
+    position: absolute;
+    width: calc(100% - 40px);
+    height: 42px;
+    box-sizing: border-box;
+    padding: 2px 0px;
+    text-align: right;
+}
+
+.privateChannelsHeaderContainer-3NB1K1:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-weight: 400;
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    margin-right: 12px;
+    box-sizing: border-box;
+    padding: 1px 4px;
+    opacity: 1 !important;
+}
+
+.headerText-2F0828 {
+    font-weight: 500;
 }
 
 /* and the rest */
 
 .name-3_Dsmg {
-    font-weight: 400;
+    font-weight: 350;
     font-size: 16px;
 }
 
 .name-3YKhmS, .tierTooltipTitle-1EIbL_ {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     line-height: 24px;
     text-transform: capitalize;
@@ -187,24 +259,28 @@
 
 /* fixing more font weights */
 
-.name-uJV0GL, .title-eS5yk3, .headerText-2F0828 {
-    font-weight: 450;
+.name-uJV0GL, .title-eS5yk3 {
+    font-weight: 500;
 }
 
 .username-1A8OIy {
-    font-weight: 400;
+    font-weight: 450;
 }
 
 .timestamp-3ZCmNB, .activityText-OW8WYb, .hoverRoll-YK53gQ, .nicknames-1XK4Zt, .spacer-3kEb8l {
-    font-weight: 300;
+    font-weight: 350;
 }
 
 .activityText-OW8WYb {
     opacity: .6
 }
 
-.messageContent-2qWWxC {
+.messageContent-2qWWxC, .activityText-yGKsKm {
     font-weight: 350 !important;
+}
+
+.activityText-yGKsKm {
+    opacity: .5
 }
 
 /* some other stupid shit, sidebar right now i think */
@@ -238,28 +314,65 @@
 }
 
 .container-1r6BKw.themed-ANHk51 {
-    background: var(--background-secondary) !important;
+    background: var(--header-background) !important;
     backdrop-filter: blur(30px) saturate(125%);
     height: 48px;
     box-sizing: border-box;
     padding: 8px;
-    margin-top: -12px;
+    margin-top: -14px;
     position: absolute;
+}
+
+.newMessagesBar-265mhP {
+    top: 46px;
+    width: 100%;
+    left: 0px;
+    border-radius: 0px;
+    background-color: var(--text-link);
+}
+
+.notice-2FJMB4 {
+    background-color: var(--text-link) !important;
+    font-weight: 350;
+}
+
+.newMessagesBar-265mhP button {
+    font-weight: 350;
 }
 
 /* chat header with acrylic blur */
 
 .akaBadge-1M-1Gw {
     background: none;
-    font-weight: 400;
+    font-weight: 350;
     font-size: 14px
 }
 
 .searchBar-3dMhjb {
     background: transparent !important;
-    font-weight: 400 !important;
     box-shadow: none;
+    color: var(--interactive-normal);
     border-bottom: 1px solid var(--interactive-normal)!important;
+    border-radius: 0px;
+    padding: 0px;
+    opacity: 1 !important;
+}
+
+.search-2oPWTC .DraftEditor-root {
+    font-weight: 400;
+    font-size: 16px;
+    padding: 0px;
+}
+
+.searchBar-3dMhjb .icon-38sknP .da-icon {
+    opacity: 0;
+}
+
+.searchBar-3dMhjb .icon-38sknP:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    margin-top: -3px;
+    color: var(--interactive-normal)
 }
 
 .scrollerWrapPolyfill-DBQCMm .scroller-2FKFPG {
@@ -268,6 +381,29 @@
     .scrollerWrapPolyfill-DBQCMm .scrollbar-2rkZSL, .scrollerWrapPolyfill-DBQCMm .pad-29zQak {
     background-color: transparent !important;
     }
+
+    .auto-Ge5KZx::-webkit-scrollbar-thumb, .auto-Ge5KZx::-webkit-scrollbar-track {
+    border-radius: 0px;
+}
+
+.auto-Ge5KZx::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+/* bright images look like ass with the dark theme, so let's try this: */
+
+.theme-dark .imageWrapper-2p5ogY img {
+    opacity: .6;
+    transition: all .3s;
+}
+
+.theme-dark .imageWrapper-2p5ogY img:hover {
+    opacity: 1;
+    transition: all .2s;
+}
 
 /* dark sidebar */
 
@@ -278,12 +414,15 @@
 .da-sidebar.theme-dark .content-3at_AU, .da-sidebar.theme-dark .selected-aXhQR6 .layout-2DM8Md {
 
     color: var(--text-primary);
-    -webkit-filter: brightness(.75) contrast(1.5) invert(1)
+    -webkit-filter: brightness(.75) contrast(1.5) invert(1);
+    filter: brightness(.75) contrast(1.5) invert(1)
     
 }
 
 .da-sidebar.theme-dark .content-3at_AU, .da-sidebar.theme-dark .selected-aXhQR6 .layout-2DM8Md .wrapper-3t9DeA {
     -webkit-filter: invert(1) brightness(1.2)!important;
+    filter: invert(1) brightness(1.2)!important;
+
 }
 
 /* server sidebar */
@@ -325,3 +464,579 @@
     background: var(--background-secondary);
     box-shadow: 0px 1.5px 3px rgba(0,0,0,.1)
 }
+
+/* change message input */
+
+.channelTextArea-rNsIhG {
+    background: var(--background-tertiary);
+    border-radius: 2px;
+    }
+
+/* settings page */
+
+.header-2RyJ0Y, .item-PXvHYJ, #bd-settings-sidebar .ui-tab-bar-item {
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.sidebarRegionScroller-3MXcoP {
+    justify-content: flex-start !important;
+    background: transparent;
+}
+
+.sidebarRegion-VFTUkN {
+    padding-left: 24px;
+    background: transparent !important;
+}
+
+.platform-win .standardSidebarView-3F1I7i, .layer-3QrUeG {
+    background: transparent !important;
+}
+
+.side-8zPYf6 .separator-gCa7yv, .theme-light #bd-settings-sidebar .ui-tab-bar-separator {
+    opacity: 0;
+}
+
+#bd-settings-sidebar .ui-tab-bar-header, .da-item[style="color: rgb(114, 137, 218);"] {
+    color: var(--text-link) !important;
+    font-weight: 500;
+}
+
+.lookFilled-1Gx00P.colorBrand-3pXr91 {
+    background: var(--text-link)
+}
+
+/* headers */
+
+h5, #bd-settings-sidebar .ui-tab-bar-header {
+    font-size: 16px !important;
+    text-transform: capitalize !important;
+    font-weight: 500 !important;
+}
+
+/* let's change the userlist, as well */
+
+.roleColor-rz2vM0 {
+    font-weight: 400 !important;
+}
+
+.membersGroup-v9BXpm {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    line-height: 24px;
+}
+
+/* some of these popups don't use root variables so guess what i'm about to do? */
+
+.root-1gCeng, .drawerSizingWrapper-17Mss4, .wrapper-2aW0bm {
+    background: var(--background-primary) !important;
+    box-shadow: 0px 2px 3px rgba(0,0,0,.6) !important;
+    border-radius: 2px;
+}
+
+.footer-2gL1pp, .button-1ZiXG9.selected-LCBEAU {
+    background: var(--background-tertiary) !important;
+    box-shadow: 0px 0px !important;
+}
+
+.wrapper-2aW0bm {
+    background: var(--background-tertiary)
+}
+
+.h4-AQvcAz, .h5-18_1nd {
+    text-transform: capitalize;
+}
+
+.emojiPicker-3PwZFl, .wrapper-1-Fsb8 {
+    background: transparent !important;
+}
+
+/* footer edit real quick */
+
+#app-mount > div.app-1q1i1E.da-app > div > div.layers-3iHuyZ.da-layers.layers-3q14ss.da-layers > div > div > div > div > div.sidebar-2K8pFh.da-sidebar > section > div.container-3baos1.da-container > div.nameTag-3uD-yy.da-nameTag.canCopy-2VBT7N.da-canCopy.focusable-1YV_-H.da-focusable > div.colorStandard-2KCXvj.size14-e6ZScH.usernameContainer-1fp4nu.da-usernameContainer > div {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: -1px;
+}
+
+.usernameContainer-1fp4nu {
+    padding-bottom: 2px;
+}
+
+    /* replacing icons . . . */
+
+.da-iconWrapper, .button-38aScr, .da-mainContent {
+    box-shadow: 0px 0px transparent;
+    background: transparent;
+    font-weight: 500;
+    color: var(--interactive-normal);
+}
+
+.da-iconWrapper:hover, .button-38aScr:hover, .da-mainContent:hover {
+    color: var(--interactive-hover);
+}
+
+/* add server */
+
+#app-mount > div.app-1q1i1E.da-app > div > div.layers-3iHuyZ.da-layers.layers-3q14ss.da-layers > div > div > nav > div.scroller-2TZvBN.da-scroller.none-2Eo-qx.scrollerBase-289Jih > div.tutorialContainer-SGrQ1h.da-tutorialContainer > div > div.listItemWrapper-3X98Pc.da-listItemWrapper > div > svg > foreignObject > div::before {
+    font-family: "Segoe MDL2 Assets" !important;
+    content: "";
+    position: absolute !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    color: var(--text-normal) !important;
+    box-sizing: border-box;
+    padding: 5px 6px;
+    font-size: 20px;
+    opacity: 1 !important;
+    margin-top: 8px;
+}
+
+#app-mount > div.app-1q1i1E.da-app > div > div.layers-3iHuyZ.da-layers.layers-3q14ss.da-layers > div > div > nav > div.scroller-2TZvBN.da-scroller.none-2Eo-qx.scrollerBase-289Jih > div.tutorialContainer-SGrQ1h.da-tutorialContainer > div > div.listItemWrapper-3X98Pc.da-listItemWrapper > div > svg > foreignObject > div {
+    color:  transparent !important;
+}
+
+    /* explore servers */
+
+.da-circleIconButton[aria-label="Explore Public Servers"] {
+    color: transparent !important;
+    font-family: "Segoe MDL2 Assets";
+}
+
+.da-circleIconButton[aria-label="Explore Public Servers"]:before {
+    content: "";
+    background: blue;
+    position: absolute !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    color: var(--text-normal) !important;
+    box-sizing: border-box;
+    padding: 5px 6px;
+    font-size: 20px;
+    opacity: 1 !important;
+    margin-top: 8px;
+}
+
+    /* friends */
+
+.da-clickable[href="/channels/@me"] svg {
+    color: transparent !important;
+}
+
+.da-clickable[href="/channels/@me"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    position: absolute;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    color: var(--text-normal) !important;
+    box-sizing: border-box;
+    padding: 10.5px 14px;
+    font-size: 20px;
+    opacity: 1 !important;
+}
+
+    /* nitro */
+
+.da-clickable[href="/store"] svg {
+    color: transparent !important;
+}
+
+.da-clickable[href="/store"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    position: absolute;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    color: var(--text-normal) !important;
+    box-sizing: border-box;
+    padding: 11px 14px;
+    font-size: 20px;
+    opacity: 1 !important;
+}
+
+    /* direct messages */
+
+.da-iconWrapper[aria-label="Create DM"] svg {
+    color: transparent;
+    opacity: 0;
+}
+
+.da-iconWrapper[aria-label="Create DM"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    width: 20px !important;
+    height: 20px !important;
+    box-sizing: border-box;
+    padding: 0px 0px;
+    opacity: 1 !important
+}
+
+    /* microphone */ 
+
+button[aria-label="Mute"] svg {
+    color: transparent;
+}
+
+#app-mount > div.app-1q1i1E.da-app > div > div.layers-3iHuyZ.da-layers.layers-3q14ss.da-layers > div > div > div > div > div.sidebar-2K8pFh.da-sidebar > section > div > div.flex-1xMQg5.flex-1O1GKY.da-flex.da-flex.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6 > button:nth-child(1) > div:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    position: absolute;
+    width: 20px !important;
+    height: 20px !important;
+    box-sizing: border-box;
+    padding: 10px 0px;
+    opacity: 1 !important
+}
+
+    /* headphones */
+
+button[aria-label="Deafen"] svg {
+    color: transparent;
+}
+
+#app-mount > div.app-1q1i1E.da-app > div > div.layers-3iHuyZ.da-layers.layers-3q14ss.da-layers > div > div > div > div > div.sidebar-2K8pFh.da-sidebar > section > div > div.flex-1xMQg5.flex-1O1GKY.da-flex.da-flex.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6 > button:nth-child(2) > div:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    position: absolute;
+    width: 20px !important;
+    height: 20px !important;
+    box-sizing: border-box;
+    padding: 10px 0px;
+    opacity: 1 !important
+}
+
+    /* settings */
+
+button[aria-label="User Settings"] .da-contents svg {
+    color: transparent;
+}
+
+button[aria-label="User Settings"]  .da-contents:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    position: absolute;
+    width: 20px !important;
+    height: 20px !important;
+    box-sizing: border-box;
+    padding: 10px 0px;
+    opacity: 1 !important
+} 
+
+/* icons in top bar */
+
+/* direct messages */
+
+.da-iconWrapper[aria-label="Direct Message"] svg, .da-iconWrapper[aria-label="Direct Message"]:hover svg {
+    color: transparent;
+}
+
+.da-iconWrapper[aria-label="Direct Message"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;    
+    position: absolute;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 3.5px 0px;
+    opacity: 1 !important;
+    }
+
+    /* call */
+
+.da-iconWrapper[aria-label="Start Voice Call"] svg, .da-iconWrapper[aria-label="Start Voice Call"]:hover svg {
+    color: transparent;
+}
+
+.da-iconWrapper[aria-label="Start Voice Call"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    
+    position: absolute;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+    }
+
+    /* video */
+
+.da-iconWrapper[aria-label="Start Video Call"] svg, .da-iconWrapper[aria-label="Start Video Call"]:hover svg {
+    color: transparent;
+}
+
+.da-iconWrapper[aria-label="Start Video Call"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    
+    position: absolute;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+    }
+
+/* pinned messages */
+
+.da-iconWrapper[aria-label="Pinned Messages"] svg, .da-iconWrapper[aria-label="Pinned Messages"]:hover svg {
+    color: transparent;
+}
+
+.da-iconWrapper[aria-label="Pinned Messages"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+}
+
+/* add user */
+
+.da-iconWrapper[aria-label="Add Friends to DM"] svg, .da-iconWrapper[aria-label="Add Friends to DM"]:hover svg {
+    color: transparent;
+}
+
+.da-iconWrapper[aria-label="Add Friends to DM"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    
+    position: absolute;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+}
+
+/* inbox */
+
+.da-iconWrapper[aria-label="Inbox"] svg, .da-iconWrapper[aria-label="Inbox"]:hover svg {
+    color: transparent;
+} 
+
+.da-iconWrapper[aria-label="Inbox"]:before {
+    content: "";
+    font-family: "codicon";
+    font-size: 20px;
+    
+    position: absolute;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+}
+
+/* help */
+
+.da-iconWrapper[aria-label="Help"] svg, .da-iconWrapper[aria-label="Help"]:hover svg {
+    color: transparent;
+} 
+
+.da-iconWrapper[aria-label="Help"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    font-weight: bold;
+    
+    position: absolute;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+}
+
+/* mute server */
+
+.da-iconWrapper[aria-label~="Mute"] svg, .da-iconWrapper[aria-label~="Mute"]:hover svg {
+    color: transparent;
+} 
+
+.da-iconWrapper[aria-label~="Mute"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 24px;
+    position: absolute;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+}
+
+/* user list */
+
+.da-iconWrapper[aria-label="Member List"] svg, .da-iconWrapper[aria-label="Member List"]:hover svg {
+    color: transparent;
+} 
+
+.da-iconWrapper[aria-label="Member List"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 24px;
+    color: inherit !important;
+    position: absolute;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+}
+
+/* within the message container */
+
+.attachButtonInner-PQjIyk svg {
+    opacity: 0 
+}
+
+.attachButtonInner-PQjIyk:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    
+    position: absolute;
+    margin-top: 3px;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+}
+
+/* gift nitro */
+
+button[aria-label="Send a gift"] .da-contents {
+    opacity: 0;
+}
+
+button[aria-label="Send a gift"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    
+    position: absolute;
+    margin-top: 3px;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+}
+
+/* send a gif */
+
+button[aria-label="Open GIF picker"] .da-contents {
+    opacity: 0;
+}
+
+button[aria-label="Open GIF picker"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    
+    position: absolute;
+    margin-top: 3px;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+}
+
+/* emoji picker */
+
+#app-mount.appMount-3lHmkl.bda-light.da-appMount .sprite-2iCowe {
+    background-image: url('https://i.imgur.com/sA65591.png') !important;
+    opacity: .8;
+}
+
+#app-mount.appMount-3lHmkl.bda-dark.da-appMount .sprite-2iCowe {
+    background-image: url('https://i.imgur.com/EKX784M.png') !important;
+    opacity: .8;
+}
+
+    /* within channels */
+
+/* text channels */
+
+.mainContent-ENyL1r[aria-label$="(text channel)"] .da-icon {
+    opacity: 0 !important;
+}
+
+.mainContent-ENyL1r[aria-label$="(text channel)"]:before {
+    content: "#";
+    font-size: 24px;
+    font-weight: 450;
+    
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 10px;
+    width: 24px !important;
+    height: 24px !important;
+    box-sizing: border-box !important;
+    padding: 1.5px 0px;
+    opacity: 1 !important;
+}
+
+.mainContent-ENyL1r[aria-label$="(voice channel)"] .da-icon {
+    opacity: 0 !important;
+}
+
+.mainContent-ENyL1r[aria-label$="(voice channel)"]:before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-size: 20px;
+    font-weight: 500;
+    
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 6px;
+    width: 18px !important;
+    height: 18px !important;
+    box-sizing: border-box !important;
+    padding: 4px 0px;
+    opacity: 1 !important;
+}
+
+/* unread messages indicator */
+
+.unread-3zKkbm {
+    height: 8px;
+    width: 2px;
+    margin-left: 2px;
+}
+
+/* content: "";
+    font-family: "Segoe MDL2 Assets";
+    position: absolute;
+    width: 20px !important;
+    height: 20px !important;
+    color: var(--text-normal) !important;
+    box-sizing: border-box;
+    padding: 10px 3.5px;
+    opacity: 1 !important */
