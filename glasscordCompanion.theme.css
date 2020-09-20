@@ -970,12 +970,12 @@ button[aria-label="Open GIF picker"]:before {
 
 /* emoji picker */
 
-#app-mount.appMount-3lHmkl.bda-light.da-appMount .sprite-2iCowe {
+.theme-light .sprite-2iCowe {
     background-image: url('https://i.imgur.com/sA65591.png') !important;
     opacity: .8;
 }
 
-#app-mount.appMount-3lHmkl.bda-dark.da-appMount .sprite-2iCowe {
+.theme-dark .sprite-2iCowe {
     background-image: url('https://i.imgur.com/EKX784M.png') !important;
     opacity: .8;
 }
