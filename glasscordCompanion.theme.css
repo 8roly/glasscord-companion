@@ -31,25 +31,29 @@
 
 /* change colors */
 
+:root, .theme-light, .theme-dark {
+    --text-link: #3778F6;
+    --background-link: #3778F619;
+}
+
 .theme-light {
     --background-primary: white;
-    --background-secondary: rgb(242,242,242, .6);
-    --background-tertiary: rgba(247,247,247, .6);
+    --background-secondary: #f2f2f299;
+    --background-tertiary: #f7f7f799;
     
-    --background-modifier-selected: rgba(255,255,255,.8);
+    --background-modifier-selected: #F7F7F7;
     
-    --header-primary: rgb(27, 29, 35);
-    --header-secondary: rgba(27,29,35,.8);
+    --header-primary: #1b1d23;
+    --header-secondary: #1b1d23cc;
 
-    --header-background: rgba(255,255,255,.6)
+    --header-background: #ffffff99;
 
-    --text-normal: rgb(2,4,6);
-    --text-muted: rgba(2,4,6,.6);
-    --text-link: #3778F6;
-    --channels-default: rgb(2,4,6);
-    --interactive-normal: rgba(2,4,6,.8);
-    --interactive-hover: rgb(2,4,6);
-    --interactive-active: rgb(27,29,35);
+    --text-normal: #020406;
+    --text-muted: #02040699;
+    --channels-default: #020406;
+    --interactive-normal: #020406cc;
+    --interactive-hover: #020406;
+    --interactive-active: #1b1d23;
     
     --logo-primary: red;
     --focus-primary: red;
@@ -59,28 +63,27 @@
     
     --scrollbar-auto-track: #0000;
     --scrollbar-auto-thumb: #767676;
-    
+
     }
     
 .theme-dark {
-    --background-primary: #141414;
-    --background-secondary: #14141499;
-    --background-tertiary: #1f1f1f99;
+    --background-primary: #191919;
+    --background-secondary: #19191999;
+    --background-tertiary: #1F1F1F99;
     
-    --background-modifier-selected: #000;
+    --background-modifier-selected: #3B3B3B;
     
-    --header-primary: rgb(230,230,230);
-    --header-secondary: rgba(230,230,230,.6);
+    --header-primary: #e6e6e6;
+    --header-secondary: #e6e6e699;
 
-    --header-background: rgba(0,0,0,.6)
+    --header-background: #19191999;
 
     --text-normal: #f7f7f7cd;
-    --text-muted: rgba(247,247,247,.6);
-    --text-link: #3778F6;
+    --text-muted: #f7f7f799;
     --channels-default: #f7f7f7cd;
-    --interactive-normal: rgba(247,247,247,.8);
-    --interactive-hover: rgb(247,247,247);
-    --interactive-active: rgb(230,230,230);
+    --interactive-normal: #f7f7f7cc;
+    --interactive-hover: #f7f7f7;
+    --interactive-active: #e6e6e6;
     
     --logo-primary: red;
     --focus-primary: red;
@@ -171,6 +174,22 @@
     z-index: 999;
 }
 
+.da-header::after, .da-header::before {
+    display: none;
+}
+
+.header-2V-4Sw {
+    box-shadow: 0px !important;
+}
+
+.scroller-RmtA4e {
+    width: calc(100% + 12px) !important;
+}
+
+.modeSelected-346R90 .content-1x5b-n, .modeSelected-346R90:hover .content-1x5b-n {
+    background: transparent; 
+}
+
 .da-selected .da-name {
     font-weight: 500;
 }
@@ -181,9 +200,9 @@
 
 /* adjust headers in channel sidebar */
 
-.name-IbjUBS {
+.name-IbjUBS, .container-2ax-kl {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: capitalize;
     height: 24px;
     box-sizing: border-box;
@@ -236,7 +255,7 @@ h1 {
 }
 
 .headerText-2F0828 {
-    font-weight: 500;
+    font-weight: 400;
 }
 
 /* and the rest */
@@ -260,7 +279,7 @@ h1 {
 /* fixing more font weights */
 
 .name-uJV0GL, .title-eS5yk3 {
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .username-1A8OIy {
@@ -468,7 +487,7 @@ h1 {
 /* change message input */
 
 .channelTextArea-rNsIhG {
-    background: var(--background-tertiary);
+    background: var(--background-modifier-selected);
     border-radius: 2px;
     }
 
@@ -566,12 +585,34 @@ h5, #bd-settings-sidebar .ui-tab-bar-header {
     padding-bottom: 2px;
 }
 
+/* mentions */
+
+.wrapper-3WhCwL {
+    color: var(--text-link);
+    background-color: var(--background-link);
+    border-radius: 2px;
+}
+
+/* flyouts? */
+
+.subscribeTooltipWrapper-32-Ce8 {
+    background: var(--text-link);
+}
+
+.subscribeTooltipWrapper-32-Ce8:after {
+    border-bottom-color: var(--text-link)
+}
+
+.lookInverted-2D7oAl.colorBrand-3pXr91 {
+    color: var(--text-link)
+}
+
     /* replacing icons . . . */
 
 .da-iconWrapper, .button-38aScr, .da-mainContent {
     box-shadow: 0px 0px transparent;
     background: transparent;
-    font-weight: 500;
+    font-weight: 300 !important;
     color: var(--interactive-normal);
 }
 
