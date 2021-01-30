@@ -1,7 +1,7 @@
 /**
  * @name Glasscord Companion
  * @author 8roly
- * @version 1.0
+ * @version 0.1.3
  * @description A companion theme for AryToNeX's Glasscord, which is required for this to work properly.
  * @source https://github.com/8roly/glasscord-companion
  * @website https://www.deviantart.com/8roly
@@ -27,6 +27,11 @@
     --server-icon-size: 36px; 
     --server-icon-spacing: 12px; 
     --server-container-padding: 8px; 
+
+    --depth-4: 0 1.6px 3.6px 0 rgba(0,0,0,.132),0 .3px .9px 0 rgba(0,0,0,.108);
+    --depth-8: 0 3.2px 7.2px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
+    --depth-16: 0 6.4px 14.4px 0 rgba(0,0,0,.132),0 1.2px 3.6px 0 rgba(0,0,0,.108);
+    --depth-64: 0 25.6px 57.6px 0 rgba(0,0,0,.22),0 4.8px 14.4px 0 rgba(0,0,0,.18);
 }
 
 /* change colors */
@@ -51,7 +56,7 @@
     --text-normal: #020406;
     --text-muted: #02040699;
     --channels-default: #020406;
-    --interactive-normal: #020406cc;
+    --interactive-normal: #02040699;
     --interactive-hover: #020406;
     --interactive-active: #1b1d23;
     
@@ -114,12 +119,12 @@
 
 .chat-3bRxxu, .container-1D34oG {
     background: var(--background-primary) !important;
-    box-shadow: 0px 1.5px 6px rgba(0,0,0,.1);
+    box-shadow: var(--depth-8);
 }
 
 .base-3dtUhz {
     background: var(--background-secondary) !important;
-    box-shadow: 0px 1.5px 6px rgba(0,0,0,.1);
+    box-shadow: var(--depth-8);
 }
 
 /* style inputs */
@@ -127,7 +132,7 @@
 .scrollableContainer-2NUZem, .searchBar-3dMhjb {
     background: transparent !important;
     border-radius: 3px;
-    box-shadow: 0px 1.5px 3px rgba(0,0,0,.2);
+    box-shadow: var(--depth-4);
     transition: all .3s;
 }
 
@@ -153,7 +158,7 @@
 /* currently selected server */
 
 .item-2hkk8m {
-    border-radius: 2px;
+    border-radius: 2pt;
     width: 2.5px;
     margin-left: 2px;
     background-color: var(--text-link)
@@ -161,14 +166,14 @@
 
 /* currently selected channel */
 
-.content-3at_AU, .selected-aXhQR6 .layout-2DM8Md {
+.content-3at_AU, .da-selected .da-layout {
     border-radius: 0px;
     margin: 0;
     background: var(--background-primary);
 }
 
 .da-selected {
-    box-shadow: 0px 1.5px 3px rgba(0,0,0,.1);
+    box-shadow: var(--depth-4);
     background: var(--background-primary);
     border-radius: 0px;
     z-index: 999;
@@ -178,11 +183,22 @@
     display: none;
 }
 
-.header-2V-4Sw {
-    box-shadow: 0px !important;
+.da-header {
+    box-shadow: 0px 0px!important;
+    padding: 0px 8px;
+    font-size: 16pt;
 }
 
-.scroller-RmtA4e {
+.da-header h1.da-name {
+    font-weight: 500 !important;
+    font-size: 14pt !important;
+}
+
+.da-containerDefault .da-wrapper:hover .da-content {
+    background: transparent;
+}
+
+.da-scroller {
     width: calc(100% + 12px) !important;
 }
 
@@ -191,7 +207,11 @@
 }
 
 .da-selected .da-name {
-    font-weight: 500;
+    font-weight: 500 !important;
+}
+
+.da-container {
+    background: transparent;
 }
 
 .scrollerWrap-2lJEkd {
@@ -201,17 +221,16 @@
 /* adjust headers in channel sidebar */
 
 .name-IbjUBS, .container-2ax-kl {
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 14pt;
+    font-weight: 450;
+    font-family: "Segoe UI Semibold";
     text-transform: capitalize;
-    height: 24px;
-    box-sizing: border-box;
-    padding: 3px 0px;    
+    line-height: 18pt;
+    
 }
 
-h1 {
-    font-size: 20px !important;
-    font-weight: 700 !important;
+.da-content {
+    height: auto;
 }
 
 /* a header should not be that tiny.  what the hale. */
@@ -229,6 +248,11 @@ h1 {
 .privateChannelsHeaderContainer-3NB1K1:hover {
     background: var(--background-secondary);
     cursor: pointer;
+    box-shadow: var(--depth-4);
+}
+
+.container-2Pjhx- {
+    padding: 0px 0px !important;
 }
 
 #private-channels > div > h2 > div {
@@ -238,13 +262,15 @@ h1 {
     box-sizing: border-box;
     padding: 2px 0px;
     text-align: right;
+    background: transparent;
+    box-shadow: 0px 0px !important;
 }
 
 .privateChannelsHeaderContainer-3NB1K1:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16pt;
     width: 32px;
     height: 32px;
     text-align: center;
@@ -267,7 +293,7 @@ h1 {
 
 .name-3YKhmS, .tierTooltipTitle-1EIbL_ {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14pt;
     line-height: 24px;
     text-transform: capitalize;
 }
@@ -280,6 +306,7 @@ h1 {
 
 .name-uJV0GL, .title-eS5yk3 {
     font-weight: 400;
+    font-size: 12pt;
 }
 
 .username-1A8OIy {
@@ -305,9 +332,11 @@ h1 {
 /* some other stupid shit, sidebar right now i think */
 
 
-.channel-2QD9_O {
+.da-container[aria-setsize="37"], .da-containerDefault[draggable="true"] {
     margin: 0px !important;
     max-width: 100%;
+    min-height: 40px !important;
+    max-height: 44px !important;
 }
 
 .scroller-1JbKMe {
@@ -322,19 +351,25 @@ h1 {
 }
 
 .searchBar-6Kv8R2 .searchBarComponent-32dTOx {
-    background: var(--background-secondary) !important;
-    border-radius: 2px;
+    background: var(--background-primary)!important;
+    border-radius: 2pt;
     color: var(--interactive-normal);
-    font-weight: 350;
     width: 100% !important;
     font-size: 12pt;
+    font-weight: 400 !important;
     height: auto !important;
-    padding: 4px 8px
+    padding: 4px 8px;
+    padding-bottom: 8px;
+    transition: color .2s
 }
 
+.searchBar-6Kv8R2:hover .searchBarComponent-32dTOx {
+    color: var(--interactive-hover);
+    transition: color .3s
+}
 .container-1r6BKw.themed-ANHk51 {
     background: var(--header-background) !important;
-    backdrop-filter: blur(30px) saturate(125%);
+    backdrop-filter: blur(15px) saturate(130%);
     height: 48px;
     box-sizing: border-box;
     padding: 8px;
@@ -460,7 +495,7 @@ h1 {
 
 .wrapper-1ucjTd:hover {
     background: var(--background-secondary) !important;
-    box-shadow: 0px 1.5px 3px rgba(0,0,0,.1)
+    box-shadow: var(--depth-4)
 }
 
 .scroller-2wx7Hm {
@@ -479,16 +514,21 @@ h1 {
     border-radius: 0px !important;
 }
 
-.clickable-1JJAn8.container-2Pjhx-:hover, .clickable-1JJAn8.container-2Pjhx-:hover .muted-3mU76i {
+.da-clickable:hover, .da-clickable:hover .muted-3mU76i, .containerDefault--pIXnN:hover {
     background: var(--background-secondary);
-    box-shadow: 0px 1.5px 3px rgba(0,0,0,.1)
+    box-shadow: var(--depth-4)
+}
+
+.da-iconWrapper.da-clickable:hover {
+    background: transparent !important;
+    box-shadow: 0px 0px !important;
 }
 
 /* change message input */
 
 .channelTextArea-rNsIhG {
     background: var(--background-modifier-selected);
-    border-radius: 2px;
+    border-radius: 2pt;
     }
 
 /* settings page */
@@ -542,18 +582,23 @@ h5, #bd-settings-sidebar .ui-tab-bar-header {
 .membersGroup-v9BXpm {
     text-transform: capitalize;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14pt;
     box-sizing: border-box;
     padding: 8px 16px;
     line-height: 24px;
+}
+
+.members-1998pB, .members-1998pB>div {
+    background: var(--background-secondary) !important;
+    box-shadow: var(--depth-4) !important;
 }
 
 /* some of these popups don't use root variables so guess what i'm about to do? */
 
 .root-1gCeng, .drawerSizingWrapper-17Mss4, .wrapper-2aW0bm {
     background: var(--background-primary) !important;
-    box-shadow: 0px 2px 3px rgba(0,0,0,.6) !important;
-    border-radius: 2px;
+    box-shadow: var(--depth-8) !important;
+    border-radius: 2pt;
 }
 
 .footer-2gL1pp, .button-1ZiXG9.selected-LCBEAU {
@@ -590,7 +635,7 @@ h5, #bd-settings-sidebar .ui-tab-bar-header {
 .wrapper-3WhCwL {
     color: var(--text-link);
     background-color: var(--background-link);
-    border-radius: 2px;
+    border-radius: 2pt;
 }
 
 /* flyouts? */
@@ -607,12 +652,116 @@ h5, #bd-settings-sidebar .ui-tab-bar-header {
     color: var(--text-link)
 }
 
+/* touching up sidebars in channels */
+
+.wrapper-PY0fhH {
+    min-height: 42px;
+    padding: 0px 8px;
+}
+
+.containerDefault-3tr_sE {
+    padding-top: 0px;
+    margin-left: 0px;
+}
+
+.da-mainContent .da-arrow {
+    display: none;
+}
+
+.da-container .da-overflow {
+    height: 100%;
+}
+
+.da-containerDefault .da-wrapper {
+    padding: 4px 8px;
+    min-height: 40px;
+    max-height: 44px;
+    box-sizing: border-box;
+}
+
+.content-1x5b-n {
+    padding: 0px;
+    border-radius: 0px;
+}
+
+.da-name {
+    font-weight: 400 !important;
+    font-size: 12pt;
+}
+
+/* toasts */
+
+.bd-toast {
+    box-shadow: var(--depth-8) !important;
+    background: var(--background-modifier-selected);
+    border-radius: 4pt !important;
+    color: var(--text-normal);
+    font-family: "Segoe UI Semibold";
+    font-weight: 450;
+}
+
+.bd-toast.toast-info, .bd-toast.toast-success {
+    background-color: var(--text-link);
+    color: white;
+}
+
+/* uploading files */
+
+.uploadModal-2ifh8j .inner-3nWsbo .file-34mY5K .icon-kyxXVr.image-2yrs5j {
+    box-shadow: var(--depth-4);
+}
+
+.uploadModal-2ifh8j {
+    box-shadow: var(--depth-16) !important;
+    border-radius: 4pt !important;
+}
+
+div > .da-backdrop {
+    background-color: var(--background-primary) !important;
+    backdrop-filter: saturate(130%) !important;
+}
+
+/* popup modals on messages */
+
+.menu-3sdvDG {
+    background: var(--background-tertiary);
+    backdrop-filter: blur(15px) saturate(130%) !important;
+    box-shadow: var(--depth-16);
+}
+
+.item-1tOPte {
+    font-weight: 400;
+    font-size: 10pt;
+}
+
+#app-mount > div:nth-child(7) > div.modal-3c3bKg.da-modal > div > div > div.inner-3nWsbo.da-inner > div.comment-4IWttf.da-comment > div.channelTextAreaUpload-3t7EIx.da-channelTextAreaUpload.marginTop8-1DLZ1n.da-marginTop8.channelTextArea-2VhZ6z.da-channelTextArea > div {
+    background: var(--background-secondary) !important;
+}
+
+.theme-light .footer-3mqk7D {
+    background: transparent;
+    box-shadow: 0px 0px;
+}
+
+.theme-light .lookLink-9FtZy-.colorPrimary-3b3xI6 {
+    color: var(--text-muted);
+    font-weight: 400 !important;
+}
+
+.da-label {
+    text-transform: lowercase !important;
+} 
+
+.da-label:first-letter, .da-optional {
+    text-transform: capitalize !important;
+}
+
     /* replacing icons . . . */
 
 .da-iconWrapper, .button-38aScr, .da-mainContent {
     box-shadow: 0px 0px transparent;
     background: transparent;
-    font-weight: 300 !important;
+    font-weight: 400 !important;
     color: var(--interactive-normal);
 }
 
@@ -632,7 +781,7 @@ h5, #bd-settings-sidebar .ui-tab-bar-header {
     color: var(--text-normal) !important;
     box-sizing: border-box;
     padding: 5px 6px;
-    font-size: 20px;
+    font-size: 16pt;
     opacity: 1 !important;
     margin-top: 8px;
 }
@@ -658,7 +807,7 @@ h5, #bd-settings-sidebar .ui-tab-bar-header {
     color: var(--text-normal) !important;
     box-sizing: border-box;
     padding: 5px 6px;
-    font-size: 20px;
+    font-size: 16pt;
     opacity: 1 !important;
     margin-top: 8px;
 }
@@ -679,7 +828,7 @@ h5, #bd-settings-sidebar .ui-tab-bar-header {
     color: var(--text-normal) !important;
     box-sizing: border-box;
     padding: 10.5px 14px;
-    font-size: 20px;
+    font-size: 16pt;
     opacity: 1 !important;
 }
 
@@ -699,7 +848,7 @@ h5, #bd-settings-sidebar .ui-tab-bar-header {
     color: var(--text-normal) !important;
     box-sizing: border-box;
     padding: 11px 14px;
-    font-size: 20px;
+    font-size: 16pt;
     opacity: 1 !important;
 }
 
@@ -732,7 +881,7 @@ button[aria-label="Mute"] svg {
 #app-mount > div.app-1q1i1E.da-app > div > div.layers-3iHuyZ.da-layers.layers-3q14ss.da-layers > div > div > div > div > div.sidebar-2K8pFh.da-sidebar > section > div > div.flex-1xMQg5.flex-1O1GKY.da-flex.da-flex.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6 > button:nth-child(1) > div:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
+    font-size: 16pt;
     position: absolute;
     width: 20px !important;
     height: 20px !important;
@@ -750,7 +899,7 @@ button[aria-label="Deafen"] svg {
 #app-mount > div.app-1q1i1E.da-app > div > div.layers-3iHuyZ.da-layers.layers-3q14ss.da-layers > div > div > div > div > div.sidebar-2K8pFh.da-sidebar > section > div > div.flex-1xMQg5.flex-1O1GKY.da-flex.da-flex.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6 > button:nth-child(2) > div:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
+    font-size: 16pt;
     position: absolute;
     width: 20px !important;
     height: 20px !important;
@@ -768,7 +917,7 @@ button[aria-label="User Settings"] .da-contents svg {
 button[aria-label="User Settings"]  .da-contents:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
+    font-size: 16pt;
     position: absolute;
     width: 20px !important;
     height: 20px !important;
@@ -788,7 +937,7 @@ button[aria-label="User Settings"]  .da-contents:before {
 .da-iconWrapper[aria-label="Direct Message"]:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;    
+    font-size: 16pt;    
     position: absolute;
     width: 24px !important;
     height: 24px !important;
@@ -806,7 +955,7 @@ button[aria-label="User Settings"]  .da-contents:before {
 .da-iconWrapper[aria-label="Start Voice Call"]:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
+    font-size: 16pt;
     
     position: absolute;
     width: 24px !important;
@@ -825,7 +974,7 @@ button[aria-label="User Settings"]  .da-contents:before {
 .da-iconWrapper[aria-label="Start Video Call"]:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
+    font-size: 16pt;
     
     position: absolute;
     width: 24px !important;
@@ -844,7 +993,7 @@ button[aria-label="User Settings"]  .da-contents:before {
 .da-iconWrapper[aria-label="Pinned Messages"]:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
+    font-size: 16pt;
     font-weight: 700;
     position: absolute;
     width: 24px !important;
@@ -863,7 +1012,7 @@ button[aria-label="User Settings"]  .da-contents:before {
 .da-iconWrapper[aria-label="Add Friends to DM"]:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
+    font-size: 16pt;
     
     position: absolute;
     width: 24px !important;
@@ -882,7 +1031,7 @@ button[aria-label="User Settings"]  .da-contents:before {
 .da-iconWrapper[aria-label="Inbox"]:before {
     content: "";
     font-family: "codicon";
-    font-size: 20px;
+    font-size: 16pt;
     
     position: absolute;
     width: 24px !important;
@@ -901,7 +1050,7 @@ button[aria-label="User Settings"]  .da-contents:before {
 .da-iconWrapper[aria-label="Help"]:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
+    font-size: 16pt;
     font-weight: bold;
     
     position: absolute;
@@ -958,7 +1107,7 @@ button[aria-label="User Settings"]  .da-contents:before {
 .attachButtonInner-PQjIyk:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
+    font-size: 16pt;
     
     position: absolute;
     margin-top: 3px;
@@ -978,7 +1127,7 @@ button[aria-label="Send a gift"] .da-contents {
 button[aria-label="Send a gift"]:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
+    font-size: 16pt;
     
     position: absolute;
     margin-top: 3px;
@@ -989,7 +1138,7 @@ button[aria-label="Send a gift"]:before {
     opacity: 1 !important;
 }
 
-/* send a gif */
+/* gif */
 
 button[aria-label="Open GIF picker"] .da-contents {
     opacity: 0;
@@ -998,7 +1147,7 @@ button[aria-label="Open GIF picker"] .da-contents {
 button[aria-label="Open GIF picker"]:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
+    font-size: 16pt;
     
     position: absolute;
     margin-top: 3px;
@@ -1025,42 +1174,31 @@ button[aria-label="Open GIF picker"]:before {
 
 /* text channels */
 
-.mainContent-ENyL1r[aria-label$="(text channel)"] .da-icon {
+.da-iconContainer[aria-label="Text"] .da-icon {
     opacity: 0 !important;
 }
 
-.mainContent-ENyL1r[aria-label$="(text channel)"]:before {
+.da-iconContainer[aria-label="Text"]:before {
     content: "#";
-    font-size: 24px;
+    font-size: 16pt;
+    margin-left: 4px;
     font-weight: 450;
     
     position: absolute;
-    margin-top: 3px;
-    margin-left: 10px;
-    width: 24px !important;
-    height: 24px !important;
-    box-sizing: border-box !important;
-    padding: 1.5px 0px;
     opacity: 1 !important;
 }
 
-.mainContent-ENyL1r[aria-label$="(voice channel)"] .da-icon {
+.da-iconContainer[aria-label="Voice"] .da-icon {
     opacity: 0 !important;
 }
 
-.mainContent-ENyL1r[aria-label$="(voice channel)"]:before {
+.da-iconContainer[aria-label="Voice"]:before {
     content: "";
     font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 16pt;
+    font-weight: 450;
     
     position: absolute;
-    margin-top: 3px;
-    margin-left: 6px;
-    width: 18px !important;
-    height: 18px !important;
-    box-sizing: border-box !important;
-    padding: 4px 0px;
     opacity: 1 !important;
 }
 
