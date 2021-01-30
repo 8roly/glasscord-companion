@@ -2,11 +2,11 @@
 a companion theme to arytonex's glasscord plugin and css!
 
 ## Prerequisites
-> [BetterDiscord](https://betterdiscord.net/)
->> I also recommend the [Adjustable Server Width](https://betterdiscordlibrary.com/themes/Adjustable Server Width) plugin, but it's not necessary
-> [Glasscord](https://github.com/AryToNeX/Glasscord)
->> and the [css](https://github.com/AryToNeX/Glasscord#how-do-i-use-it)
-> [BetterDiscord](https://betterdiscord.net/home/)
+* [BetterDiscord](https://betterdiscord.net/)
+> I also recommend the [Adjustable Server Width](https://betterdiscordlibrary.com/themes/Adjustable Server Width) plugin, but it's not necessary
+* [Glasscord](https://github.com/AryToNeX/Glasscord)
+> and the [css](https://github.com/AryToNeX/Glasscord#how-do-i-use-it)
+* [BetterDiscord](https://betterdiscord.net/home/)
 
 ## Applying the Theme
 1. Install BetterDiscord, then follow the instructions to install Glasscord
